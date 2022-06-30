@@ -1,6 +1,7 @@
 ![Logo](https://i.imgur.com/Hx26798.png)
 
 # Permissions Plus
+[![build](https://github.com/toadless/permissionsplus/actions/workflows/build.yml/badge.svg)](https://github.com/toadless/permissionsplus/actions/workflows/build.yml)
 [![Discord](https://img.shields.io/discord/954456505334263828.svg?label=discord&logo=discord)](https://discord.gg/8Nkgxg25Xw)
 
 PermissionsPlus is an PostgreSQL based permissions plugin built for [PaperMC](https://papermc.io/) servers.
