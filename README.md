@@ -27,4 +27,4 @@ PermissionsPlus required a PostgreSQL database and currently does not support lo
 you cant run a PostgreSQL database then please dont use this plugin.
 
 # License
-PermissionsPlus is licensed under the MIT license. View [`LICENSE`]() for more information.
+PermissionsPlus is licensed under the MIT license. View [`LICENSE`](https://github.com/toadless/permissionsplus/blob/main/LICENSE) for more information.
