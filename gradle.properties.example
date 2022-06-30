@@ -1,0 +1,5 @@
+BUILD_DIR=/path/to/your/plugins/folder
+
+DB_URL=
+DB_USER=
+DB_PASSWORD=

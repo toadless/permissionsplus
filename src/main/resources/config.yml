@@ -1,0 +1,143 @@
+###########################################################################################################################
+#                                                                                                                         #
+#  PPPPPPPPPPPPPPPPP                                                                                                      #
+#  P::::::::::::::::P                                                                                                     #
+#  P::::::PPPPPP:::::P                                                                                                    #
+#  P:::::P    P:::::P                                                                                      +++++++        #
+#  P::::P     P:::::P  eeeeeeeeeeee    rrrrr   rrrrrrrrr      mmmmmmm    mmmmmmm       ssssssssss          +:::::+        #
+#  P::::P     P:::::Pee::::::::::::ee  r::::rrr:::::::::r   mm:::::::m  m:::::::mm   ss::::::::::s         +:::::+        #
+#  P::::PPPPPP:::::Pe::::::eeeee:::::eer:::::::::::::::::r m::::::::::mm::::::::::mss:::::::::::::s  +++++++:::::+++++++  #
+#  P:::::::::::::PPe::::::e     e:::::err::::::rrrrr::::::rm::::::::::::::::::::::ms::::::ssss:::::s +:::::::::::::::::+  #
+#  P::::PPPPPPPPP  e:::::::eeeee::::::e r:::::r     r:::::rm:::::mmm::::::mmm:::::m s:::::s  ssssss  +:::::::::::::::::+  #
+#  P::::P          e:::::::::::::::::e  r:::::r     rrrrrrrm::::m   m::::m   m::::m   s::::::s       +++++++:::::+++++++  #
+#  P::::P          e::::::eeeeeeeeeee   r:::::r            m::::m   m::::m   m::::m      s::::::s          +:::::+        #
+#  P::::P          e:::::::e            r:::::r            m::::m   m::::m   m::::mssssss   s:::::s        +:::::+        #
+#  PP::::::PP      e::::::::e           r:::::r            m::::m   m::::m   m::::ms:::::ssss::::::s       +++++++        #
+#  P::::::::P       e::::::::eeeeeeee   r:::::r            m::::m   m::::m   m::::ms::::::::::::::s                       #
+#  P::::::::P        ee:::::::::::::e   r:::::r            m::::m   m::::m   m::::m s:::::::::::ss                        #
+#  PPPPPPPPPP          eeeeeeeeeeeeee   rrrrrrr            mmmmmm   mmmmmm   mmmmmm  sssssssssss                          #
+#                                                                                                                         #
+###########################################################################################################################
+
+###########################################################################################################################
+#                                                      Database                                                           #
+###########################################################################################################################
+
+# PermissionsPlus requires a postgresql database to connect to
+# and does not support local file storage!
+
+# The address, port, and database name
+db_url: "jdbc:postgresql://IP:PORT/DB"
+
+# Credentials for the database
+db_username: ""
+db_password: ""
+
+###########################################################################################################################
+#                                                    Formatting                                                           #
+###########################################################################################################################
+
+# The format of the chat
+# GROUP_PREFIX = The players group prefix
+# PLAYER_NAME = The name of the player
+# PLAYER_MESSAGE = The players message
+chat_format: "<GROUP_PREFIX&r&7PLAYER_NAME&r> PLAYER_MESSAGE"
+
+###########################################################################################################################
+#                                                       Options                                                           #
+###########################################################################################################################
+
+# If this is set to true people can't build without the permission nodes:
+# plus.breakblock -> for breaking blocks
+# plus.placeblock -> for placing blocks
+# If its false then people can build without these permissions unless other plugins
+# pervent it!
+building_restrictions: true
+
+# If this is false then all opped users will be deopped and the op/deop
+# commands will be disabled.
+allow_ops: false
+
+# If this is set to true the defined chat format option will take effect, and you will be able to
+# give people prefixes and suffixes in chat! If false then PermissionsPlus will not modify the chat.
+chat_formatting: true
+
+# If this is set to true the defined 'tab' field in each group will be displayed on the tablist!
+tablist: true
+
+# If this is set to true the defined 'tag' field in each group will be displayed as player name tags!
+tags: true
+
+###########################################################################################################################
+#                                                   Permission Nodes                                                      #
+###########################################################################################################################
+
+# PermissionsPlus comes with 3 permission nodes.
+
+# plus.group allows people to change peoples group
+
+# plus.breakblock allows people to break blocks if this permission is enabled in options
+# plus.placeblock allows people to break blocks if this permission is enabled in options
+
+# Also the wildcard permission is a thing in PermissionsPlus (*)
+
+###########################################################################################################################
+#                                                   Placeholder API                                                       #
+###########################################################################################################################
+
+# PermissionsPlus has PlaceholderAPI (https://github.com/PlaceholderAPI/PlaceholderAPI) integrated into it!
+
+# In other configuration files for different plugins if you would like to display a players rank, etc. you can!
+# Placeholders:
+
+# %PLAYER_GROUP%
+# %PLAYER_GROUP_PREFIX%
+# %PLAYER_GROUP_TAG%
+# %PLAYER_GROUP_TAB%
+# %PLAYER_GROUP_MESSAGE% -> Recommended to show the players rank!
+
+###########################################################################################################################
+#                                                        Groups                                                           #
+###########################################################################################################################
+
+# The groups loaded
+
+# Please make sure that more senior groups have a higher id and have the default group as the lowest id. Example: Owner: 3 Admin: 2 Default: 1
+# this is because if a user has permission to change peoples group it makes sure that staff such as Admin won't be able to give ranks such as Owner!
+
+# Please only assign the default option once, don't have two groups with default set to true.
+
+# The groups tag is the name tag formatting shown above the player, PLAYER_NAME is the players name.
+# The groups tab is the formatting for the users name on the tab list, PLAYER_NAME is the players name.
+
+# The groups message is the message shown in chat when the group is assigned! Such as "You are now OWNER" the OWNER would be the groups message.
+
+# Allowed permissions are the allows permissions of the group and disallowed permissions are the disallowed permissions of the group
+# Wildcard permissions are enabled, so you can set groups to have the '*' permission. This gives them every permission on the server
+# and is the equivalent of OP. So please don't give this permission to anyone except the owner.
+
+# The group id also represents the group in the database, so don't change it after you have assigned it.
+
+# Example groups are provided!
+
+groups:
+  default:
+    id: "0"
+    default: true
+    prefix: "&7"
+    tag: "&7PLAYER_NAME"
+    tab: "&7PLAYER_NAME"
+    message: "&7NORMAL"
+    allowedPermissions:
+    disallowedPermissions:
+      - "minecraft.command.gamemode"
+  owner:
+    id: "1"
+    default: false
+    prefix: "&c&lOWNER "
+    tag: "&c&lPLAYER_NAME"
+    tab: "&c&lPLAYER_NAME"
+    message: "&c&lOWNER"
+    allowedPermissions:
+      - "*"
+    disallowedPermissions:

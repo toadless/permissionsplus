@@ -1,0 +1,26 @@
+name: PermissionsPlus
+version: '${version}'
+main: net.toadless.permissionsplus.PermissionsPlus
+api-version: 1.19
+prefix: Perms+
+authors: [ toadless ]
+description: A minecraft permissions plugin.
+website: toadless.net
+
+softdepend:
+  - PlaceholderAPI
+
+permissions:
+  plus.breakblock:
+    description: Allows the player to break blocks
+  plus.placeblock:
+    description: Allows the player to place blocks
+  plus.group:
+    description: Allows the player to change other players groups
+
+commands:
+  group:
+    aliases: rank
+    usage: /<command>
+    description: Sets the provided users rank.
+    permission: plus.group
