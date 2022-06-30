@@ -7,6 +7,8 @@ PermissionsPlus is an PostgreSQL based permissions plugin built for [PaperMC](ht
 It is built around groups, where you can control what permissions each group has and assign
 them to players.
 
+The latest released of PermissionsPlus can be found [here](https://github.com/toadless/permissionsplus/releases)!
+
 # Building From Source
 PermissionsPlus uses Gradle to handle dependencies and building! Make sure you have Java 8 and Git, and then run:
 
