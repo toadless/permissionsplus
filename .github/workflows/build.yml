@@ -37,7 +37,7 @@ jobs:
         ######################################################## build gradle
       - name: 🏛️ gradlew build
         run: |
-          ./gradlew clean build
+          ./gradlew shadowJar
         ######################################################## release on github
       - name: 🎨 create release
         uses: marvinpinto/action-automatic-releases@latest
