@@ -48,4 +48,4 @@ jobs:
           title: "Permissions Plus | Latest Release"
           files: |
             LICENSE
-            build/libs/PermissionsPlus-1.0-all.jar
+            ~/build/libs/PermissionsPlus-1.0-all.jar
